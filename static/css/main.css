@@ -37,7 +37,7 @@ main,
 
 .footer-link:hover {
     text-decoration: none;
-    color: #04D6B3;
+    color: orange;
 }
 
 .soc-btn {
@@ -46,5 +46,5 @@ main,
 }
 
 .soc-btn:hover {
-    color: #04D6B3;
+    color: orange;
 }

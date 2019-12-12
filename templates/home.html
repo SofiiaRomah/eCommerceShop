@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
 <!--Carousel Wrapper-->
-<section id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+<section id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
 
     <!--Indicators-->
     <ol class="carousel-indicators">
@@ -18,11 +19,11 @@
 
         <!--First slide-->
         <div class="carousel-item active">
-            <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg');
+            <div class="view" style="background-image: url({% static 'img/pic1.jpg' %});
                 background-repeat: no-repeat; background-size: cover; background-position: center;">
 
                 <!-- Mask & flexbox options-->
-                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+                <div class="mask rgba-mdb-color-strong d-flex justify-content-center align-items-center">
 
                     <!-- Content -->
                     {% include "snippets/welcome.html" %}
@@ -37,11 +38,11 @@
 
         <!--Second slide-->
         <div class="carousel-item">
-            <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%283%29.jpg');
+            <div class="view" style="background-image: url({% static 'img/pic2.jpg' %});
                 background-repeat: no-repeat; background-size: cover; background-position: center;">
 
                 <!-- Mask & flexbox options-->
-                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+                <div class="mask rgba-mdb-color-strong d-flex justify-content-center align-items-center">
 
                     <!-- Content -->
                     {% include "snippets/welcome.html" %}
@@ -56,11 +57,11 @@
 
         <!--Third slide-->
         <div class="carousel-item">
-            <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%285%29.jpg');
+            <div class="view" style="background-image: url({% static 'img/pic3.jpg' %});
                 background-repeat: no-repeat; background-size: cover; background-position: center;">
 
                 <!-- Mask & flexbox options-->
-                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+                <div class="mask rgba-mdb-color-strong d-flex justify-content-center align-items-center">
 
                     <!-- Content -->
                     {% include "snippets/welcome.html" %}
