@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #my apps
     'home',
+    'account',
+    
+    # my installed apps
+    'widget_tweaks',
 
     #Django apps
     'django.contrib.admin',
@@ -126,3 +130,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Default user model
+AUTH_USER_MODEL = 'account.User'

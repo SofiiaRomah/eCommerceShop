@@ -1,7 +1,15 @@
+/* Prevent navbar overlapping of body content on all pages except home */
+/* main {
+    padding-top: 5rem;
+}
+
+main.home {
+    padding-top: 0;
+} */
+
 /* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
 html,
 body,
-main,
 .view {
     height: 100%;
 }
@@ -47,4 +55,8 @@ main,
 
 .soc-btn:hover {
     color: orange;
+}
+
+.main-pad {
+    padding-top: 6rem;
 }
