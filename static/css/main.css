@@ -60,3 +60,16 @@ body,
 .main-pad {
     padding-top: 6rem;
 }
+
+/* Social authentication buttons */
+.btn-fb, .btn-fb:hover {
+    background-color: #3b5998;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.btn-google, .btn-google:hover {
+    background-color: #DB4437;
+    color: #ffffff;
+    font-size: 1rem;
+}
