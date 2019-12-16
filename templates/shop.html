@@ -9,7 +9,7 @@
         <div class="container">
 
             <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark brown mt-3 mb-5">
+            <nav class="navbar navbar-expand-lg navbar-white mt-3 mb-5">
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -88,7 +88,7 @@
                                     {% else %}
                                         <img src="{% static 'img/default.png' %}" class="card-img-top h-100" alt="{{ item.title }}">
                                     {% endif %}
-                                    <a>
+                                    <a href="{{ item.get_absolute_url }}">
                                         <div class="mask rgba-white-slight"></div>
                                     </a>
                                 </div>
@@ -102,7 +102,7 @@
                                     </a>
                                     <h5>
                                         <strong>
-                                            <a href="" class="dark-grey-text">
+                                            <a href="{{ item.get_absolute_url }}" class="dark-grey-text">
                                                 {{ item.title }}
                                                 </a>
                                         </strong>
