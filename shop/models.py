@@ -36,6 +36,9 @@ class Item(models.Model):
     def get_absolute_url(self):
         return reverse("product", kwargs={"slug": self.slug})
 
+    def get_add_to_cart_url(self):
+        return reverse("add-to-cart", kwargs={"slug": self.slug})
+
     def __str__(self):
         return self.title
 
@@ -44,7 +47,7 @@ class Order(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     is_paid = models.BooleanField(default=False)
-    ship_to = models.CharField(max_length=255)
+    ship_to = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.user.email

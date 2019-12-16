@@ -7,6 +7,20 @@
 {% block content %}
     <!--Main layout-->
     <main class="mt-5 pt-4">
+
+        <!-- Added to cart messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show mt-3" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <!-- Added to cart messages -->
+
         <div class="container dark-grey-text mt-5">
 
             <!--Grid row-->
@@ -44,14 +58,10 @@
 
                         <p>{{ item.description }}</p>
 
-                        <form class="d-flex justify-content-left">
-                            <!-- Default input -->
-                            <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-                            <button class="btn btn-red btn-md my-0 p" type="submit">Add to my shopping cart
-                                <i class="fas fa-shopping-cart ml-1"></i>
-                            </button>
-
-                        </form>
+                        <a class="btn btn-red btn-md my-0 p" type="submit" href="{{ item.get_add_to_cart_url }}">
+                            Add to my shopping cart
+                            <i class="fas fa-shopping-cart ml-1"></i>
+                        </a>
 
                     </div>
                     <!--Content-->

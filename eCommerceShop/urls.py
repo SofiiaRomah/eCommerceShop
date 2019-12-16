@@ -20,7 +20,13 @@ from django.conf import settings
 
 from home.views import home_screen_view
 from account.views import signup_view, logout_view, signin_view
-from shop.views import ProductView, ShopView
+from shop.views import (
+    ProductView,
+    ShopView,
+    add_to_cart_view,
+    cart_view,
+    remove_from_cart,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -31,6 +37,9 @@ urlpatterns = [
     path("social-auth/", include("social_django.urls", namespace="social")),
     path("shop/", ShopView.as_view(), name="shop"),
     path("product/<slug>/", ProductView.as_view(), name="product"),
+    path("add-to-cart/<slug>/", add_to_cart_view, name="add-to-cart"),
+    path("cart/", cart_view, name="cart"),
+    path("remove-from-cart/<slug>/", remove_from_cart, name="remove-from-cart"),
 ]
 
 if settings.DEBUG:
