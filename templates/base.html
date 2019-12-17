@@ -18,6 +18,8 @@
     <!-- My styles -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'img/logo.png' %}" />
+    {% block head_extra %}
+    {% endblock %}
 </head>
 
 <body>

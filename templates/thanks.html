@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Thank You - MyShop{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container main-pad">
+            <div class="jumbotron text-center">
+                <h1 class="display-3 text-brown">Thank You!</h1>
+                <p class="lead">Your order will be delivered soon.</p>
+                <hr>
+                <p>
+                    Do you have some questions? <a href="">Contact us</a>
+                </p>
+                <p class="lead">
+                    <a class="btn btn-brown btn-sm" href="{% url 'home' %}" role="button">Back to home</a>
+                </p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

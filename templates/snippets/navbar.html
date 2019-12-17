@@ -50,9 +50,9 @@
                             <span class="clearfix d-none d-sm-inline-block"> Shopping Cart </span>
                         </a>
                     </li>
-                    {% comment %} <li class="nav-item">
-                        <p class="text-white mt-3">Welcome, {{ request.user.username }}</p>
-                    </li> {% endcomment %}
+                    <li class="nav-item">
+                        <p class="text-white mt-3">Hi, {{ request.user.username }}</p>
+                    </li>
                     <li class="nav_item">
                         <a href="{% url 'logout' %}" class="nav-link btn btn-brown text-white rounded waves-effect">
                             Logout

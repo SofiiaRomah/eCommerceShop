@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from django.db.models import Avg
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.shortcuts import reverse
@@ -29,7 +30,7 @@ class Item(models.Model):
         max_digits=7, decimal_places=2, validators=[MinValueValidator(0)]
     )
     size = models.PositiveSmallIntegerField(validators=[MaxValueValidator(100)])
-    rating = models.PositiveSmallIntegerField(validators=[MaxValueValidator(5)])
+    rating = models.PositiveSmallIntegerField(null=True, blank=True, validators=[MaxValueValidator(5)])
 
     slug = models.SlugField(max_length=100)
 
@@ -72,6 +73,12 @@ class Review(models.Model):
     rating = models.PositiveSmallIntegerField(
         null=True, blank=True, validators=[MaxValueValidator(5)]
     )
+
+    def save(self, *args, **kwargs):
+        new_average = Review.objects.filter(item=self.item).aggregate(Avg('rating'))['rating__avg']
+        self.item.rating = new_average
+        self.item.save()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.user} - {self.item}"
